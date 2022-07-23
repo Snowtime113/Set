@@ -23,7 +23,7 @@ class Deck:
 
     def draw(self,N: int):
         out_cards = []
-        if N < len(self.cards):
+        if N > len(self.cards):
             N = len(self.cards)
 
         for i in range(N):
@@ -39,9 +39,8 @@ class Deck:
 if __name__ == "__main__":
     d = Deck()
     d.shuffle()
-    print(d)
+    #print(d)
+    #print(len(d.cards))
+    a = d.draw(4)
     print(len(d.cards))
-
-    print(*d.draw(4))
-
-    print(len(d.cards))
+    print(len(a))
